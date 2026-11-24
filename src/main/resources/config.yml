@@ -1,0 +1,121 @@
+# FailChestLock - by Failxos (Minecraft 1.21.11)
+# Vse se ovlada pres GUI, plugin nema zadne prikazy.
+# Zpravy pouzivaji MiniMessage: https://docs.advntr.dev/minimessage/format.html
+# Permission failchestlock.bypass otevre/rozbije jakoukoliv zamcenou chestku.
+
+# Co jde zamknout
+lockable:
+  - CHEST
+  - TRAPPED_CHEST
+  - BARREL
+
+code:
+  min-length: 4
+  max-length: 6
+
+# Po zadani spravneho kodu je chestka odemcena na tuto dobu (minuty)
+unlock-minutes: 5
+
+# Spatne pokusy: po max-attempts spatnych kodech je hrac zablokovan na lockout-seconds
+max-attempts: 3
+lockout-seconds: 60
+
+# Po polozeni chestky se hned otevre menu pro nastaveni kodu
+auto-prompt-on-place: true
+
+# Item, kterym se (se Shiftem + pravy klik) zamkne uz stojici chestka. Prazdne = vypnuto.
+lock-tool: TRIPWIRE_HOOK
+
+# Ochrany
+protect:
+  hoppers: true      # hopper nic nevytahne ani nevlozi
+  explosions: true   # vybuchy zamcene chestky neznici
+
+# Napojeni na ItemsAdder: misto vanilla itemu v menu muzes pouzit vlastni ikony.
+# Do kazde polozky napis namespace:item_id (napr. "myicons:digit_5"). Prazdne = vanilla item.
+# Nazvy a popisky itemu zustavaji z "messages" nize, ItemsAdder dodava jen vzhled.
+# Funguje i bez ItemsAdderu (pak se pouziji vanilla itemy).
+itemsadder:
+  enabled: true
+  icons:
+    digit-0: ""
+    digit-1: ""
+    digit-2: ""
+    digit-3: ""
+    digit-4: ""
+    digit-5: ""
+    digit-6: ""
+    digit-7: ""
+    digit-8: ""
+    digit-9: ""
+    del: ""
+    ok: ""
+    code-filled: ""
+    code-empty: ""
+    filler: ""
+    change-code: ""
+    trusted: ""
+    remove: ""
+    close: ""
+    back: ""
+    yes: ""
+    no: ""
+
+gui:
+  # Textury hlav s cisly 0-9 (cast URL za textures.minecraft.net/texture/).
+  # Prazdna hodnota = papir s cislem. (ItemsAdder ikona digit-N ma prednost.)
+  digit-heads:
+    - "55a224807693978ed834355f9e5145f9c56ef68cf6f2c9e1734a46e246aae1"
+    - "31a9463fd3c433d5e1d9fec6d5d4b09a83a970b0b74dd546ce67a73348caab"
+    - "acb419d984d8796373c9646233c7a02664bd2ce3a1d3476dd9b1c5463b14ebe"
+    - "f8ebab57b7614bb22a117be43e848bcd14daecb50e8f5d0926e4864dff470"
+    - "62bfcfb489da867dce96e3c3c17a3db7c79cae8ac1f9a5a8c8ac95e4ba3"
+    - "ef4ecf110b0acee4af1da343fb136f1f2c216857dfda6961defdbee7b9528"
+    - "f331a6a6fcd6995b62088d353bfb68d9b89ae258325caf3f2886464f54a7329"
+    - "d4ba6ac07d422377a855793f36dea2ed240223f52fd1648181612ecd1a0cfd5"
+    - "c61a8a641437be9aea207253dd3f25440d954ea2b5866c552f386b29ac4d049"
+    - "a1928e1bfd86a9b79397c4cb4b65ef99af49b7d5f7957ad62c0c699a622cfbe"
+
+messages:
+  prefix: "<dark_gray>[<gold>FailChestLock</gold>]</dark_gray> "
+
+  # Nadpisy menu
+  title-enter: "<dark_gray>Zadej kód"
+  title-set: "<dark_gray>Nastav kód"
+  title-repeat: "<dark_gray>Zopakuj kód"
+  title-owner: "<dark_gray>Zámek chestky"
+  title-trusted: "<dark_gray>Důvěryhodní hráči"
+  title-remove: "<dark_gray>Odebrat zámek?"
+
+  # Itemy v menu
+  item-digit: "<white><bold>%digit%"
+  item-digit-lore: "<gray>Klikni pro zadání"
+  item-del: "<red>Smazat číslici"
+  item-ok: "<green>Potvrdit"
+  item-code-filled: "<green>*"
+  item-code-empty: "<gray>_"
+  item-change-code: "<gold>Změnit kód"
+  item-change-code-lore: "<gray>Nastav nový kód chestky"
+  item-trusted: "<aqua>Důvěryhodní hráči"
+  item-trusted-lore: "<gray>Tito hráči nemusí zadávat kód"
+  item-trusted-count: "<gray>Počet: <white>%count%"
+  item-remove: "<red>Odebrat zámek"
+  item-remove-lore: "<gray>Chestka bude otevřená pro všechny"
+  item-close: "<red>Zavřít"
+  item-back: "<yellow>Zpět"
+  item-yes: "<green>Ano, odebrat zámek"
+  item-no: "<red>Ne, ponechat"
+  item-trusted-on: "<green>Důvěryhodný <gray>(klikni pro odebrání)"
+  item-trusted-off: "<gray>Klikni pro přidání"
+
+  # Zpravy v chatu
+  wrong-code: "<red>Špatný kód. Zbývající pokusy: <white>%left%"
+  locked-out: "<red>Příliš mnoho pokusů. Zkus to znovu za <white>%time%s</white>."
+  code-too-short: "<red>Kód musí mít alespoň <white>%min%</white> číslic."
+  code-mismatch: "<red>Kódy se neshodují, zkus to znovu."
+  code-set: "<green>Chestka je zamčená. Ty ji otevřeš bez kódu."
+  code-changed: "<green>Kód chestky byl změněn."
+  lock-removed: "<yellow>Zámek byl odebrán."
+  lock-skipped: "<gray>Chestka zůstala odemčená. Zamkneš ji později: Shift + pravý klik s tripwire hookem v ruce."
+  break-denied: "<red>Tuhle chestku může rozbít jen její majitel."
+  place-denied: "<red>Tuhle chestku nejde připojit k cizí zamčené chestce. Postav ji jinde nebo se Shiftem."

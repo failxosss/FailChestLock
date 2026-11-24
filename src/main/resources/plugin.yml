@@ -1,0 +1,13 @@
+name: FailChestLock
+version: '${project.version}'
+main: cz.failxos.failchestlock.FailChestLock
+api-version: '1.21.11'
+author: Failxos
+description: Zamky na chestky s kodem pres GUI
+load: POSTWORLD
+softdepend: [ItemsAdder]
+
+permissions:
+  failchestlock.bypass:
+    description: Otevre a rozbije jakoukoliv zamcenou chestku
+    default: false
