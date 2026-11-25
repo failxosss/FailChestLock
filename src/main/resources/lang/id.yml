@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>Masukkan kode
+title-set: <dark_gray>Atur kode
+title-repeat: <dark_gray>Ulangi kode
+title-owner: <dark_gray>Kunci peti
+title-trusted: <dark_gray>Pemain tepercaya
+title-remove: <dark_gray>Hapus kunci?
+title-scope: <dark_gray>Ubah kode untuk
+item-digit-lore: <gray>Klik untuk memasukkan
+item-del: <red>Hapus digit terakhir
+item-ok: <green>Konfirmasi
+item-change-code: <gold>Ubah kode
+item-change-code-lore: <gray>Atur kode baru
+item-trusted: <aqua>Pemain tepercaya
+item-trusted-lore: <gray>Tidak perlu memasukkan kode
+item-trusted-count: '<gray>Jumlah: <white>%count%'
+item-remove: <red>Hapus kunci
+item-remove-lore: <gray>Peti akan terbuka untuk semua orang
+item-close: <red>Tutup
+item-back: <yellow>Kembali
+item-yes: <green>Ya, hapus kunci
+item-no: <red>Tidak, pertahankan
+item-trusted-on: <green>Tepercaya <gray>(klik untuk menghapus)
+item-trusted-off: <gray>Klik untuk menambahkan
+item-scope-one: <gold>Hanya peti ini
+item-scope-one-lore: <gray>Peti lain tetap memakai kodenya
+item-scope-all: <gold>Semua peti saya
+item-scope-all-lore: <gray>Termasuk kode default untuk peti baru
+wrong-code: '<red>Kode salah. Sisa percobaan: <white>%left%'
+locked-out: '<red>Terlalu banyak percobaan. Coba lagi dalam: <white>%time%s</white>'
+code-too-short: '<red>Panjang kode minimum: <white>%min%'
+code-mismatch: <red>Kode tidak cocok, coba lagi.
+code-set: <green>Peti terkunci. Kamu membukanya tanpa kode.
+code-changed: <green>Kode peti telah diubah.
+code-changed-all: <green>Kode diubah di semua petimu.
+lock-removed: <yellow>Kunci telah dihapus.
+lock-skipped: <gray>Peti tetap tidak terkunci. Kunci nanti dengan Shift + klik kanan sambil memegang Tripwire Hook.
+locked-default: <green>Peti dikunci dengan kodemu.
+break-denied: <red>Hanya pemilik yang bisa menghancurkan peti ini.
+place-denied: <red>Kamu tidak bisa menyambungkan peti ini ke peti terkunci milik pemain lain.

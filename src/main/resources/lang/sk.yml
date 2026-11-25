@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>Zadaj kód
+title-set: <dark_gray>Nastav kód
+title-repeat: <dark_gray>Zopakuj kód
+title-owner: <dark_gray>Zámok truhlice
+title-trusted: <dark_gray>Dôveryhodní hráči
+title-remove: <dark_gray>Odstrániť zámok?
+title-scope: <dark_gray>Zmeniť kód pre
+item-digit-lore: <gray>Klikni na zadanie
+item-del: <red>Zmazať poslednú číslicu
+item-ok: <green>Potvrdiť
+item-change-code: <gold>Zmeniť kód
+item-change-code-lore: <gray>Nastav nový kód
+item-trusted: <aqua>Dôveryhodní hráči
+item-trusted-lore: <gray>Nemusia zadávať kód
+item-trusted-count: '<gray>Počet: <white>%count%'
+item-remove: <red>Odstrániť zámok
+item-remove-lore: <gray>Truhlica bude otvorená pre všetkých
+item-close: <red>Zavrieť
+item-back: <yellow>Späť
+item-yes: <green>Áno, odstrániť zámok
+item-no: <red>Nie, ponechať
+item-trusted-on: <green>Dôveryhodný <gray>(klikni na odobratie)
+item-trusted-off: <gray>Klikni na pridanie
+item-scope-one: <gold>Iba túto truhlicu
+item-scope-one-lore: <gray>Ostatné truhlice si kód ponechajú
+item-scope-all: <gold>Všetky moje truhlice
+item-scope-all-lore: <gray>Aj predvolený kód pre nové truhlice
+wrong-code: '<red>Zlý kód. Zostávajúce pokusy: <white>%left%'
+locked-out: '<red>Príliš veľa pokusov. Skús to znova o: <white>%time%s</white>'
+code-too-short: '<red>Minimálna dĺžka kódu: <white>%min%'
+code-mismatch: <red>Kódy sa nezhodujú, skús to znova.
+code-set: <green>Truhlica je zamknutá. Ty ju otvoríš bez kódu.
+code-changed: <green>Kód truhlice bol zmenený.
+code-changed-all: <green>Kód bol zmenený na všetkých tvojich truhliciach.
+lock-removed: <yellow>Zámok bol odstránený.
+lock-skipped: <gray>Truhlica ostala odomknutá. Zamkneš ju neskôr pomocou Shift + pravý klik s Tripwire Hook v ruke.
+locked-default: <green>Truhlica zamknutá tvojím kódom.
+break-denied: <red>Túto truhlicu môže rozbiť iba jej majiteľ.
+place-denied: <red>Túto truhlicu nemožno pripojiť k cudzej zamknutej truhlici.

@@ -27,10 +27,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-/** Vsechna menu zamku (otevirani + obsluha kliku). */
+/** All lock menus: opening them and handling clicks. */
 public final class Menus implements Listener {
 
-    /** Sloty cisel 0-9 v 54-slotovem ciselniku. */
+    /** Slots of the digits 0-9 in the 54-slot number pad. */
     private static final int[] DIGIT_SLOTS = {49, 21, 22, 23, 30, 31, 32, 39, 40, 41};
     private static final int DEL_SLOT = 48;
     private static final int OK_SLOT = 50;
@@ -60,7 +60,7 @@ public final class Menus implements Listener {
         return Math.max(1, Math.min(maxLength(), plugin.getConfig().getInt("code.min-length", 4)));
     }
 
-    // ---------- zvuky ----------
+    // ---------- sounds ----------
 
     private static void click(Player p) {
         p.playSound(p.getLocation(), Sound.UI_BUTTON_CLICK, 0.6f, 1.2f);
@@ -74,7 +74,7 @@ public final class Menus implements Listener {
         p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 0.7f, 1.2f);
     }
 
-    // ---------- otevirani menu ----------
+    // ---------- opening menus ----------
 
     private void show(Player p, LockMenu menu) {
         p.openInventory(menu.getInventory());
@@ -122,12 +122,22 @@ public final class Menus implements Listener {
         show(p, menu);
     }
 
-    public void openSet(Player p, BlockPos pos, Lock lock, boolean change, int stage, String first) {
+    public void openSet(Player p, BlockPos pos, Lock lock, boolean change, boolean all, int stage, String first) {
         LockMenu menu = new LockMenu(LockMenu.Type.SET, p.getUniqueId(), pos, lock);
         menu.change = change;
+        menu.all = all;
         menu.stage = stage;
         menu.firstCode = first;
         keypad(menu, plugin.messages().component(stage == 1 ? "title-set" : "title-repeat"));
+        show(p, menu);
+    }
+
+    public void openScope(Player p, BlockPos pos, Lock lock) {
+        LockMenu menu = new LockMenu(LockMenu.Type.SCOPE, p.getUniqueId(), pos, lock);
+        Inventory inv = create(menu, 27, plugin.messages().component("title-scope"));
+        inv.setItem(11, items.scopeOne());
+        inv.setItem(15, items.scopeAll());
+        inv.setItem(22, items.back());
         show(p, menu);
     }
 
@@ -188,7 +198,7 @@ public final class Menus implements Listener {
         }
     }
 
-    // ---------- udalosti ----------
+    // ---------- events ----------
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onClick(InventoryClickEvent e) {
@@ -239,7 +249,7 @@ public final class Menus implements Listener {
         manager().forget(e.getPlayer().getUniqueId());
     }
 
-    // ---------- kliky ----------
+    // ---------- clicks ----------
 
     private void handle(Player p, LockMenu menu, int slot) {
         if (menu.finished) {
@@ -247,6 +257,7 @@ public final class Menus implements Listener {
         }
         switch (menu.type) {
             case ENTER, SET -> keypadClick(p, menu, slot);
+            case SCOPE -> scopeClick(p, menu, slot);
             case OWNER -> ownerClick(p, menu, slot);
             case TRUSTED -> trustedClick(p, menu, slot);
             case REMOVE -> removeClick(p, menu, slot);
@@ -333,7 +344,7 @@ public final class Menus implements Listener {
         if (menu.stage == 1) {
             click(p);
             menu.finished = true;
-            later(() -> openSet(p, menu.pos, menu.lock, menu.change, 2, code));
+            later(() -> openSet(p, menu.pos, menu.lock, menu.change, menu.all, 2, code));
             return;
         }
 
@@ -341,7 +352,7 @@ public final class Menus implements Listener {
             fail(p);
             plugin.messages().send(p, "code-mismatch");
             menu.finished = true;
-            later(() -> openSet(p, menu.pos, menu.lock, menu.change, 1, null));
+            later(() -> openSet(p, menu.pos, menu.lock, menu.change, menu.all, 1, null));
             return;
         }
 
@@ -351,19 +362,54 @@ public final class Menus implements Listener {
                 later(() -> p.closeInventory());
                 return;
             }
-            manager().setCode(menu.lock, code);
-            plugin.messages().send(p, "code-changed");
+            if (menu.all) {
+                manager().setCodeAll(menu.lock.owner, code);
+                plugin.messages().send(p, "code-changed-all");
+            } else {
+                manager().setCode(menu.lock, code);
+                plugin.messages().send(p, "code-changed");
+            }
         } else {
             Block block = menu.pos.block();
             if (block == null || !manager().isLockable(block.getType()) || manager().get(block) != null) {
                 later(() -> p.closeInventory());
                 return;
             }
-            manager().create(p.getUniqueId(), Containers.halves(block), code);
+            Lock created = manager().create(p.getUniqueId(), Containers.halves(block), code);
+            if (manager().defaultCodeEnabled()) {
+                manager().rememberDefault(p.getUniqueId(), created);
+            }
             plugin.messages().send(p, "code-set");
         }
         success(p);
         later(() -> p.closeInventory());
+    }
+
+    private void scopeClick(Player p, LockMenu menu, int slot) {
+        if (!canManage(p, menu)) {
+            menu.finished = true;
+            later(() -> p.closeInventory());
+            return;
+        }
+        switch (slot) {
+            case 11 -> {
+                click(p);
+                menu.finished = true;
+                later(() -> openSet(p, menu.pos, menu.lock, true, false, 1, null));
+            }
+            case 15 -> {
+                click(p);
+                menu.finished = true;
+                later(() -> openSet(p, menu.pos, menu.lock, true, true, 1, null));
+            }
+            case 22 -> {
+                click(p);
+                menu.finished = true;
+                later(() -> openOwner(p, menu.pos, menu.lock));
+            }
+            default -> {
+            }
+        }
     }
 
     private void ownerClick(Player p, LockMenu menu, int slot) {
@@ -376,7 +422,11 @@ public final class Menus implements Listener {
             case 11 -> {
                 click(p);
                 menu.finished = true;
-                later(() -> openSet(p, menu.pos, menu.lock, true, 1, null));
+                if (manager().defaultCodeEnabled()) {
+                    later(() -> openScope(p, menu.pos, menu.lock));
+                } else {
+                    later(() -> openSet(p, menu.pos, menu.lock, true, false, 1, null));
+                }
             }
             case 13 -> {
                 click(p);
@@ -427,7 +477,11 @@ public final class Menus implements Listener {
             return;
         }
         if (slot == 11) {
+            UUID owner = menu.lock.owner;
             manager().remove(menu.lock);
+            if (plugin.getConfig().getBoolean("default-code.clear-on-remove", false)) {
+                manager().clearDefault(owner);
+            }
             plugin.messages().send(p, "lock-removed");
             success(p);
             menu.finished = true;

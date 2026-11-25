@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>Digite o código
+title-set: <dark_gray>Defina o código
+title-repeat: <dark_gray>Repita o código
+title-owner: <dark_gray>Cadeado do baú
+title-trusted: <dark_gray>Jogadores de confiança
+title-remove: <dark_gray>Remover o cadeado?
+title-scope: <dark_gray>Alterar código para
+item-digit-lore: <gray>Clique para digitar
+item-del: <red>Apagar último dígito
+item-ok: <green>Confirmar
+item-change-code: <gold>Alterar código
+item-change-code-lore: <gray>Defina um novo código
+item-trusted: <aqua>Jogadores de confiança
+item-trusted-lore: <gray>Não precisam do código
+item-trusted-count: '<gray>Quantidade: <white>%count%'
+item-remove: <red>Remover cadeado
+item-remove-lore: <gray>O baú ficará aberto para todos
+item-close: <red>Fechar
+item-back: <yellow>Voltar
+item-yes: <green>Sim, remover o cadeado
+item-no: <red>Não, manter
+item-trusted-on: <green>De confiança <gray>(clique para remover)
+item-trusted-off: <gray>Clique para adicionar
+item-scope-one: <gold>Apenas este baú
+item-scope-one-lore: <gray>Os outros baús mantêm o código
+item-scope-all: <gold>Todos os meus baús
+item-scope-all-lore: <gray>Também o código padrão para baús novos
+wrong-code: '<red>Código incorreto. Tentativas restantes: <white>%left%'
+locked-out: '<red>Muitas tentativas. Tente novamente em: <white>%time%s</white>'
+code-too-short: '<red>Tamanho mínimo do código: <white>%min%'
+code-mismatch: <red>Os códigos não coincidem, tente novamente.
+code-set: <green>O baú está trancado. Você o abre sem código.
+code-changed: <green>O código do baú foi alterado.
+code-changed-all: <green>O código foi alterado em todos os seus baús.
+lock-removed: <yellow>O cadeado foi removido.
+lock-skipped: <gray>O baú continua destrancado. Tranque-o depois com Shift + clique direito segurando um Tripwire Hook.
+locked-default: <green>Baú trancado com o seu código.
+break-denied: <red>Só o dono pode quebrar este baú.
+place-denied: <red>Você não pode ligar este baú ao baú trancado de outro jogador.

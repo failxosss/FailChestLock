@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>కోడ్ నమోదు చేయండి
+title-set: <dark_gray>కోడ్ సెట్ చేయండి
+title-repeat: <dark_gray>కోడ్ మళ్లీ నమోదు చేయండి
+title-owner: <dark_gray>చెస్ట్ లాక్
+title-trusted: <dark_gray>నమ్మకమైన ఆటగాళ్లు
+title-remove: <dark_gray>లాక్ తీసివేయాలా?
+title-scope: <dark_gray>కోడ్ మార్చండి
+item-digit-lore: <gray>నమోదు చేయడానికి క్లిక్ చేయండి
+item-del: <red>చివరి అంకె తొలగించండి
+item-ok: <green>నిర్ధారించండి
+item-change-code: <gold>కోడ్ మార్చండి
+item-change-code-lore: <gray>కొత్త కోడ్ సెట్ చేయండి
+item-trusted: <aqua>నమ్మకమైన ఆటగాళ్లు
+item-trusted-lore: <gray>వారికి కోడ్ అవసరం లేదు
+item-trusted-count: '<gray>సంఖ్య: <white>%count%'
+item-remove: <red>లాక్ తీసివేయండి
+item-remove-lore: <gray>చెస్ట్ అందరికీ తెరిచి ఉంటుంది
+item-close: <red>మూసివేయండి
+item-back: <yellow>వెనుకకు
+item-yes: <green>అవును, లాక్ తీసివేయండి
+item-no: <red>వద్దు, ఉంచండి
+item-trusted-on: <green>నమ్మకమైనవారు <gray>(తీసివేయడానికి క్లిక్ చేయండి)
+item-trusted-off: <gray>జోడించడానికి క్లిక్ చేయండి
+item-scope-one: <gold>ఈ చెస్ట్ మాత్రమే
+item-scope-one-lore: <gray>మిగతా చెస్ట్‌ల కోడ్ అలాగే ఉంటుంది
+item-scope-all: <gold>నా చెస్ట్‌లన్నీ
+item-scope-all-lore: <gray>కొత్త చెస్ట్‌ల డిఫాల్ట్ కోడ్ కూడా మారుతుంది
+wrong-code: '<red>తప్పు కోడ్. మిగిలిన ప్రయత్నాలు: <white>%left%'
+locked-out: '<red>చాలా ప్రయత్నాలు జరిగాయి. మళ్లీ ప్రయత్నించండి: <white>%time%s</white>'
+code-too-short: '<red>కోడ్ కనీస పొడవు: <white>%min%'
+code-mismatch: <red>కోడ్‌లు సరిపోలలేదు, మళ్లీ ప్రయత్నించండి.
+code-set: <green>చెస్ట్ లాక్ అయింది. మీరు కోడ్ లేకుండా తెరవవచ్చు.
+code-changed: <green>చెస్ట్ కోడ్ మార్చబడింది.
+code-changed-all: <green>మీ అన్ని చెస్ట్‌ల కోడ్ మార్చబడింది.
+lock-removed: <yellow>లాక్ తీసివేయబడింది.
+lock-skipped: <gray>చెస్ట్ లాక్ కాలేదు. తర్వాత Tripwire Hook చేతిలో పట్టుకుని Shift + రైట్-క్లిక్ చేసి లాక్ చేయండి.
+locked-default: <green>చెస్ట్ మీ కోడ్‌తో లాక్ అయింది.
+break-denied: <red>ఈ చెస్ట్‌ను యజమాని మాత్రమే పగలగొట్టగలరు.
+place-denied: <red>ఈ చెస్ట్‌ను వేరొకరి లాక్ చెస్ట్‌కు కలపలేరు.

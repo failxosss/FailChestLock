@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>コードを入力
+title-set: <dark_gray>コードを設定
+title-repeat: <dark_gray>コードを再入力
+title-owner: <dark_gray>チェストのロック
+title-trusted: <dark_gray>信頼するプレイヤー
+title-remove: <dark_gray>ロックを解除しますか？
+title-scope: <dark_gray>コードの変更対象
+item-digit-lore: <gray>クリックして入力
+item-del: <red>最後の数字を削除
+item-ok: <green>確定
+item-change-code: <gold>コードを変更
+item-change-code-lore: <gray>新しいコードを設定
+item-trusted: <aqua>信頼するプレイヤー
+item-trusted-lore: <gray>コードの入力が不要です
+item-trusted-count: '<gray>人数: <white>%count%'
+item-remove: <red>ロックを解除
+item-remove-lore: <gray>チェストは誰でも開けられるようになります
+item-close: <red>閉じる
+item-back: <yellow>戻る
+item-yes: <green>はい、解除する
+item-no: <red>いいえ、そのまま
+item-trusted-on: <green>信頼済み <gray>(クリックで解除)
+item-trusted-off: <gray>クリックで追加
+item-scope-one: <gold>このチェストのみ
+item-scope-one-lore: <gray>他のチェストのコードは変わりません
+item-scope-all: <gold>自分のすべてのチェスト
+item-scope-all-lore: <gray>新しいチェスト用の標準コードも変更
+wrong-code: '<red>コードが違います。残り回数: <white>%left%'
+locked-out: '<red>試行回数が多すぎます。次の時間後に再試行: <white>%time%s</white>'
+code-too-short: '<red>コードの最小桁数: <white>%min%'
+code-mismatch: <red>コードが一致しません。もう一度お試しください。
+code-set: <green>チェストをロックしました。あなたはコード不要で開けられます。
+code-changed: <green>チェストのコードを変更しました。
+code-changed-all: <green>すべてのチェストのコードを変更しました。
+lock-removed: <yellow>ロックを解除しました。
+lock-skipped: <gray>チェストはロックされていません。後でTripwire Hookを持ってShift＋右クリックでロックできます。
+locked-default: <green>あなたのコードでチェストをロックしました。
+break-denied: <red>このチェストを壊せるのは所有者だけです。
+place-denied: <red>他のプレイヤーのロック済みチェストには接続できません。

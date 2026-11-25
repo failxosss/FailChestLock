@@ -17,6 +17,7 @@ public final class FailChestLock extends JavaPlugin {
     public void onEnable() {
         saveDefaultConfig();
         messages = new Messages(this);
+        messages.load();
         manager = new LockManager(this);
         manager.reloadSettings();
         manager.load();
@@ -26,7 +27,7 @@ public final class FailChestLock extends JavaPlugin {
         pm.registerEvents(menus, this);
         pm.registerEvents(new ProtectionListener(this), this);
 
-        getLogger().info("FailChestLock " + getPluginMeta().getVersion() + " by Failxos nacten.");
+        getLogger().info("FailChestLock " + getPluginMeta().getVersion() + " by Failxos enabled.");
     }
 
     @Override

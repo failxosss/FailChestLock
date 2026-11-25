@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>Введите код
+title-set: <dark_gray>Задайте код
+title-repeat: <dark_gray>Повторите код
+title-owner: <dark_gray>Замок сундука
+title-trusted: <dark_gray>Доверенные игроки
+title-remove: <dark_gray>Снять замок?
+title-scope: <dark_gray>Сменить код для
+item-digit-lore: <gray>Нажмите, чтобы ввести
+item-del: <red>Удалить последнюю цифру
+item-ok: <green>Подтвердить
+item-change-code: <gold>Сменить код
+item-change-code-lore: <gray>Задать новый код
+item-trusted: <aqua>Доверенные игроки
+item-trusted-lore: <gray>Им не нужен код
+item-trusted-count: '<gray>Количество: <white>%count%'
+item-remove: <red>Снять замок
+item-remove-lore: <gray>Сундук станет открыт для всех
+item-close: <red>Закрыть
+item-back: <yellow>Назад
+item-yes: <green>Да, снять замок
+item-no: <red>Нет, оставить
+item-trusted-on: <green>Доверенный <gray>(нажмите, чтобы убрать)
+item-trusted-off: <gray>Нажмите, чтобы добавить
+item-scope-one: <gold>Только этот сундук
+item-scope-one-lore: <gray>У остальных сундуков код сохранится
+item-scope-all: <gold>Все мои сундуки
+item-scope-all-lore: <gray>Также код по умолчанию для новых сундуков
+wrong-code: '<red>Неверный код. Осталось попыток: <white>%left%'
+locked-out: '<red>Слишком много попыток. Повторите через: <white>%time%s</white>'
+code-too-short: '<red>Минимальная длина кода: <white>%min%'
+code-mismatch: <red>Коды не совпадают, попробуйте снова.
+code-set: <green>Сундук заперт. Вы открываете его без кода.
+code-changed: <green>Код сундука изменён.
+code-changed-all: <green>Код изменён на всех ваших сундуках.
+lock-removed: <yellow>Замок снят.
+lock-skipped: <gray>Сундук остался открытым. Запереть его позже можно через Shift + ПКМ с Tripwire Hook в руке.
+locked-default: <green>Сундук заперт вашим кодом.
+break-denied: <red>Сломать этот сундук может только владелец.
+place-denied: <red>Нельзя присоединить этот сундук к запертому сундуку другого игрока.

@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>Kodu gir
+title-set: <dark_gray>Kodu belirle
+title-repeat: <dark_gray>Kodu tekrarla
+title-owner: <dark_gray>Sandık kilidi
+title-trusted: <dark_gray>Güvenilen oyuncular
+title-remove: <dark_gray>Kilit kaldırılsın mı?
+title-scope: <dark_gray>Kodu şunun için değiştir
+item-digit-lore: <gray>Girmek için tıkla
+item-del: <red>Son rakamı sil
+item-ok: <green>Onayla
+item-change-code: <gold>Kodu değiştir
+item-change-code-lore: <gray>Yeni kod belirle
+item-trusted: <aqua>Güvenilen oyuncular
+item-trusted-lore: <gray>Kodu girmeleri gerekmez
+item-trusted-count: '<gray>Sayı: <white>%count%'
+item-remove: <red>Kilidi kaldır
+item-remove-lore: <gray>Sandık herkese açık olacak
+item-close: <red>Kapat
+item-back: <yellow>Geri
+item-yes: <green>Evet, kilidi kaldır
+item-no: <red>Hayır, kalsın
+item-trusted-on: <green>Güvenilir <gray>(kaldırmak için tıkla)
+item-trusted-off: <gray>Eklemek için tıkla
+item-scope-one: <gold>Sadece bu sandık
+item-scope-one-lore: <gray>Diğer sandıklar kodunu korur
+item-scope-all: <gold>Tüm sandıklarım
+item-scope-all-lore: <gray>Yeni sandıklar için varsayılan kod da
+wrong-code: '<red>Yanlış kod. Kalan deneme: <white>%left%'
+locked-out: '<red>Çok fazla deneme. Tekrar dene: <white>%time%s</white>'
+code-too-short: '<red>Minimum kod uzunluğu: <white>%min%'
+code-mismatch: <red>Kodlar eşleşmiyor, tekrar dene.
+code-set: <green>Sandık kilitlendi. Sen kodsuz açarsın.
+code-changed: <green>Sandık kodu değiştirildi.
+code-changed-all: <green>Kod tüm sandıklarında değiştirildi.
+lock-removed: <yellow>Kilit kaldırıldı.
+lock-skipped: <gray>Sandık kilitsiz kaldı. Sonra Shift + sağ tık ile elinde Tripwire Hook tutarak kilitleyebilirsin.
+locked-default: <green>Sandık kodunla kilitlendi.
+break-denied: <red>Bu sandığı yalnızca sahibi kırabilir.
+place-denied: <red>Bu sandığı başkasının kilitli sandığına bağlayamazsın.

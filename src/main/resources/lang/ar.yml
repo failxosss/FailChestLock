@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>أدخل الرمز
+title-set: <dark_gray>عيّن الرمز
+title-repeat: <dark_gray>أعد إدخال الرمز
+title-owner: <dark_gray>قفل الصندوق
+title-trusted: <dark_gray>اللاعبون الموثوقون
+title-remove: <dark_gray>إزالة القفل؟
+title-scope: <dark_gray>تغيير الرمز لـ
+item-digit-lore: <gray>انقر للإدخال
+item-del: <red>حذف آخر رقم
+item-ok: <green>تأكيد
+item-change-code: <gold>تغيير الرمز
+item-change-code-lore: <gray>عيّن رمزًا جديدًا
+item-trusted: <aqua>اللاعبون الموثوقون
+item-trusted-lore: <gray>لا يحتاجون إلى الرمز
+item-trusted-count: '<gray>العدد: <white>%count%'
+item-remove: <red>إزالة القفل
+item-remove-lore: <gray>سيكون الصندوق مفتوحًا للجميع
+item-close: <red>إغلاق
+item-back: <yellow>رجوع
+item-yes: <green>نعم، أزل القفل
+item-no: <red>لا، أبقِه
+item-trusted-on: <green>موثوق <gray>(انقر للإزالة)
+item-trusted-off: <gray>انقر للإضافة
+item-scope-one: <gold>هذا الصندوق فقط
+item-scope-one-lore: <gray>تبقى الصناديق الأخرى برمزها
+item-scope-all: <gold>كل صناديقي
+item-scope-all-lore: <gray>وأيضًا الرمز الافتراضي للصناديق الجديدة
+wrong-code: '<red>رمز خاطئ. المحاولات المتبقية: <white>%left%'
+locked-out: '<red>محاولات كثيرة جدًا. حاول مرة أخرى بعد: <white>%time%s</white>'
+code-too-short: '<red>الحد الأدنى لطول الرمز: <white>%min%'
+code-mismatch: <red>الرمزان غير متطابقين، حاول مرة أخرى.
+code-set: <green>تم قفل الصندوق. يمكنك فتحه بدون رمز.
+code-changed: <green>تم تغيير رمز الصندوق.
+code-changed-all: <green>تم تغيير الرمز في جميع صناديقك.
+lock-removed: <yellow>تمت إزالة القفل.
+lock-skipped: <gray>الصندوق غير مقفل. يمكنك قفله لاحقًا بـ Shift + نقر يمين مع حمل Tripwire Hook.
+locked-default: <green>تم قفل الصندوق برمزك.
+break-denied: <red>المالك فقط يمكنه كسر هذا الصندوق.
+place-denied: <red>لا يمكنك وصل هذا الصندوق بصندوق مقفل لدى لاعب آخر.

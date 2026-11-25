@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>কোড লিখুন
+title-set: <dark_gray>কোড সেট করুন
+title-repeat: <dark_gray>কোড আবার লিখুন
+title-owner: <dark_gray>চেস্ট লক
+title-trusted: <dark_gray>বিশ্বস্ত খেলোয়াড়
+title-remove: <dark_gray>লক সরাবেন?
+title-scope: <dark_gray>কোড পরিবর্তন করুন
+item-digit-lore: <gray>লিখতে ক্লিক করুন
+item-del: <red>শেষ সংখ্যা মুছুন
+item-ok: <green>নিশ্চিত করুন
+item-change-code: <gold>কোড পরিবর্তন
+item-change-code-lore: <gray>নতুন কোড সেট করুন
+item-trusted: <aqua>বিশ্বস্ত খেলোয়াড়
+item-trusted-lore: <gray>তাদের কোড লাগবে না
+item-trusted-count: '<gray>সংখ্যা: <white>%count%'
+item-remove: <red>লক সরান
+item-remove-lore: <gray>চেস্ট সবার জন্য খোলা থাকবে
+item-close: <red>বন্ধ করুন
+item-back: <yellow>ফিরে যান
+item-yes: <green>হ্যাঁ, লক সরান
+item-no: <red>না, রেখে দিন
+item-trusted-on: <green>বিশ্বস্ত <gray>(সরাতে ক্লিক করুন)
+item-trusted-off: <gray>যোগ করতে ক্লিক করুন
+item-scope-one: <gold>শুধু এই চেস্ট
+item-scope-one-lore: <gray>অন্য চেস্টের কোড একই থাকবে
+item-scope-all: <gold>আমার সব চেস্ট
+item-scope-all-lore: <gray>নতুন চেস্টের ডিফল্ট কোডও বদলাবে
+wrong-code: '<red>ভুল কোড। বাকি চেষ্টা: <white>%left%'
+locked-out: '<red>অনেকবার চেষ্টা হয়েছে। আবার চেষ্টা করুন: <white>%time%s</white>'
+code-too-short: '<red>কোডের ন্যূনতম দৈর্ঘ্য: <white>%min%'
+code-mismatch: <red>কোড মেলেনি, আবার চেষ্টা করুন।
+code-set: <green>চেস্ট লক হয়েছে। আপনি কোড ছাড়াই খুলতে পারবেন।
+code-changed: <green>চেস্টের কোড পরিবর্তন হয়েছে।
+code-changed-all: <green>আপনার সব চেস্টের কোড পরিবর্তন হয়েছে।
+lock-removed: <yellow>লক সরানো হয়েছে।
+lock-skipped: <gray>চেস্ট লক হয়নি। পরে Tripwire Hook হাতে নিয়ে Shift + রাইট-ক্লিক করে লক করুন।
+locked-default: <green>চেস্ট আপনার কোড দিয়ে লক হয়েছে।
+break-denied: <red>এই চেস্ট শুধু মালিকই ভাঙতে পারবেন।
+place-denied: <red>এই চেস্ট অন্য কারও লক করা চেস্টের সাথে জোড়া যাবে না।

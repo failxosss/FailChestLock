@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>Code eingeben
+title-set: <dark_gray>Code festlegen
+title-repeat: <dark_gray>Code wiederholen
+title-owner: <dark_gray>Truhenschloss
+title-trusted: <dark_gray>Vertraute Spieler
+title-remove: <dark_gray>Schloss entfernen?
+title-scope: <dark_gray>Code ändern für
+item-digit-lore: <gray>Zum Eingeben klicken
+item-del: <red>Letzte Ziffer löschen
+item-ok: <green>Bestätigen
+item-change-code: <gold>Code ändern
+item-change-code-lore: <gray>Neuen Code festlegen
+item-trusted: <aqua>Vertraute Spieler
+item-trusted-lore: <gray>Sie brauchen den Code nicht
+item-trusted-count: '<gray>Anzahl: <white>%count%'
+item-remove: <red>Schloss entfernen
+item-remove-lore: <gray>Die Truhe ist dann für alle offen
+item-close: <red>Schließen
+item-back: <yellow>Zurück
+item-yes: <green>Ja, Schloss entfernen
+item-no: <red>Nein, behalten
+item-trusted-on: <green>Vertraut <gray>(klicken zum Entfernen)
+item-trusted-off: <gray>Klicken zum Hinzufügen
+item-scope-one: <gold>Nur diese Truhe
+item-scope-one-lore: <gray>Andere Truhen behalten ihren Code
+item-scope-all: <gold>Alle meine Truhen
+item-scope-all-lore: <gray>Auch der Standardcode für neue Truhen
+wrong-code: '<red>Falscher Code. Verbleibende Versuche: <white>%left%'
+locked-out: '<red>Zu viele Versuche. Versuche es erneut in: <white>%time%s</white>'
+code-too-short: '<red>Mindestlänge des Codes: <white>%min%'
+code-mismatch: <red>Die Codes stimmen nicht überein, versuche es erneut.
+code-set: <green>Die Truhe ist verschlossen. Du öffnest sie ohne Code.
+code-changed: <green>Der Code der Truhe wurde geändert.
+code-changed-all: <green>Der Code wurde bei allen deinen Truhen geändert.
+lock-removed: <yellow>Das Schloss wurde entfernt.
+lock-skipped: <gray>Die Truhe bleibt unverschlossen. Verschließe sie später mit Shift + Rechtsklick und einem Tripwire Hook in der Hand.
+locked-default: <green>Truhe mit deinem Code verschlossen.
+break-denied: <red>Nur der Besitzer kann diese Truhe abbauen.
+place-denied: <red>Du kannst diese Truhe nicht an die verschlossene Truhe eines anderen anschließen.

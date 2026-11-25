@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>Entrez le code
+title-set: <dark_gray>Définir le code
+title-repeat: <dark_gray>Répétez le code
+title-owner: <dark_gray>Verrou du coffre
+title-trusted: <dark_gray>Joueurs de confiance
+title-remove: <dark_gray>Retirer le verrou ?
+title-scope: <dark_gray>Changer le code pour
+item-digit-lore: <gray>Cliquez pour saisir
+item-del: <red>Effacer le dernier chiffre
+item-ok: <green>Confirmer
+item-change-code: <gold>Changer le code
+item-change-code-lore: <gray>Définir un nouveau code
+item-trusted: <aqua>Joueurs de confiance
+item-trusted-lore: <gray>Ils n'ont pas besoin du code
+item-trusted-count: '<gray>Nombre: <white>%count%'
+item-remove: <red>Retirer le verrou
+item-remove-lore: <gray>Le coffre sera ouvert à tous
+item-close: <red>Fermer
+item-back: <yellow>Retour
+item-yes: <green>Oui, retirer le verrou
+item-no: <red>Non, le garder
+item-trusted-on: <green>De confiance <gray>(cliquez pour retirer)
+item-trusted-off: <gray>Cliquez pour ajouter
+item-scope-one: <gold>Ce coffre uniquement
+item-scope-one-lore: <gray>Les autres coffres gardent leur code
+item-scope-all: <gold>Tous mes coffres
+item-scope-all-lore: <gray>Aussi le code par défaut des nouveaux coffres
+wrong-code: '<red>Code incorrect. Essais restants: <white>%left%'
+locked-out: '<red>Trop d''essais. Réessayez dans: <white>%time%s</white>'
+code-too-short: '<red>Longueur minimale du code: <white>%min%'
+code-mismatch: <red>Les codes ne correspondent pas, réessayez.
+code-set: <green>Le coffre est verrouillé. Vous l'ouvrez sans code.
+code-changed: <green>Le code du coffre a été modifié.
+code-changed-all: <green>Le code a été modifié sur tous vos coffres.
+lock-removed: <yellow>Le verrou a été retiré.
+lock-skipped: <gray>Le coffre reste déverrouillé. Verrouillez-le plus tard avec Maj + clic droit en tenant un Tripwire Hook.
+locked-default: <green>Coffre verrouillé avec votre code.
+break-denied: <red>Seul le propriétaire peut casser ce coffre.
+place-denied: <red>Vous ne pouvez pas relier ce coffre au coffre verrouillé d'un autre joueur.

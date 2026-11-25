@@ -19,8 +19,8 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * Vsechny itemy v menu. Poradi zdroju ikony:
- * 1) ItemsAdder item z configu (itemsadder.icons.*), 2) vanilla item / textura hlavy.
+ * Every item shown in the menus. Icon sources in order:
+ * 1) ItemsAdder item from config (itemsadder.icons.*), 2) vanilla item / head texture.
  */
 public final class Items {
 
@@ -46,7 +46,6 @@ public final class Items {
         return item;
     }
 
-    /** Ikona: ItemsAdder (pokud je nastaveny) nebo vanilla zaloha. */
     private ItemStack icon(String key, Material fallback, Component name, Component... lore) {
         ItemStack custom = hook.icon(key);
         if (custom != null) {
@@ -117,6 +116,14 @@ public final class Items {
 
     public ItemStack changeCode() {
         return icon("change-code", Material.TRIPWIRE_HOOK, txt("item-change-code"), txt("item-change-code-lore"));
+    }
+
+    public ItemStack scopeOne() {
+        return icon("scope-one", Material.CHEST, txt("item-scope-one"), txt("item-scope-one-lore"));
+    }
+
+    public ItemStack scopeAll() {
+        return icon("scope-all", Material.ENDER_CHEST, txt("item-scope-all"), txt("item-scope-all-lore"));
     }
 
     public ItemStack trustedButton(int count) {

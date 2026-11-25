@@ -3,6 +3,7 @@ package cz.failxos.failchestlock;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
@@ -28,6 +29,10 @@ public final class LockManager {
     public record Unlock(long until, int version) {
     }
 
+    /** Salted hash of a code (the code itself is never stored). */
+    public record Credentials(String salt, String hash) {
+    }
+
     private static final class Attempt {
         int fails;
         long lockedUntil;
@@ -38,6 +43,7 @@ public final class LockManager {
     private final SecureRandom random = new SecureRandom();
     private final Map<BlockPos, Lock> byPos = new HashMap<>();
     private final Map<UUID, Lock> byId = new HashMap<>();
+    private final Map<UUID, Credentials> defaults = new HashMap<>();
     private final Map<UUID, Map<UUID, Unlock>> unlocked = new HashMap<>();
     private final Map<String, Attempt> attempts = new HashMap<>();
     private Set<Material> lockable = EnumSet.noneOf(Material.class);
@@ -49,14 +55,14 @@ public final class LockManager {
         this.file = new File(plugin.getDataFolder(), "locks.yml");
     }
 
-    // ---------- nastaveni ----------
+    // ---------- settings ----------
 
     public void reloadSettings() {
         Set<Material> set = EnumSet.noneOf(Material.class);
         for (String name : plugin.getConfig().getStringList("lockable")) {
             Material m = Material.matchMaterial(name);
             if (m == null) {
-                plugin.getLogger().warning("Neznamy material v lockable: " + name);
+                plugin.getLogger().warning("Unknown material in lockable: " + name);
             } else {
                 set.add(m);
             }
@@ -75,11 +81,16 @@ public final class LockManager {
         return lockTool;
     }
 
-    // ---------- ukladani ----------
+    public boolean defaultCodeEnabled() {
+        return plugin.getConfig().getBoolean("default-code.enabled", true);
+    }
+
+    // ---------- storage ----------
 
     public void load() {
         byPos.clear();
         byId.clear();
+        defaults.clear();
         if (!file.exists()) {
             return;
         }
@@ -113,10 +124,26 @@ public final class LockManager {
                     byPos.put(pos, lock);
                 }
             } catch (IllegalArgumentException ex) {
-                plugin.getLogger().warning("Preskocen poskozeny zamek: " + ex.getMessage());
+                plugin.getLogger().warning("Skipped a damaged lock entry: " + ex.getMessage());
             }
         }
-        plugin.getLogger().info("Nacteno zamku: " + byId.size());
+
+        ConfigurationSection section = yml.getConfigurationSection("defaults");
+        if (section != null) {
+            for (String key : section.getKeys(false)) {
+                try {
+                    UUID player = UUID.fromString(key);
+                    String salt = section.getString(key + ".salt");
+                    String hash = section.getString(key + ".hash");
+                    if (salt != null && hash != null) {
+                        defaults.put(player, new Credentials(salt, hash));
+                    }
+                } catch (IllegalArgumentException ignored) {
+                    // not a UUID, skip
+                }
+            }
+        }
+        plugin.getLogger().info("Loaded locks: " + byId.size());
     }
 
     public void save() {
@@ -134,11 +161,15 @@ public final class LockManager {
             list.add(m);
         }
         yml.set("locks", list);
+        for (Map.Entry<UUID, Credentials> entry : defaults.entrySet()) {
+            yml.set("defaults." + entry.getKey() + ".salt", entry.getValue().salt());
+            yml.set("defaults." + entry.getKey() + ".hash", entry.getValue().hash());
+        }
         try {
             plugin.getDataFolder().mkdirs();
             yml.save(file);
         } catch (IOException e) {
-            plugin.getLogger().severe("Nepodarilo se ulozit locks.yml: " + e.getMessage());
+            plugin.getLogger().severe("Could not save locks.yml: " + e.getMessage());
         }
     }
 
@@ -157,7 +188,7 @@ public final class LockManager {
         });
     }
 
-    // ---------- dotazy ----------
+    // ---------- queries ----------
 
     public Lock get(Block block) {
         BlockPos pos = BlockPos.of(block);
@@ -181,11 +212,24 @@ public final class LockManager {
         return lock != null && byId.get(lock.id) == lock;
     }
 
-    // ---------- zmeny ----------
+    // ---------- changes ----------
 
     public Lock create(UUID owner, Collection<Block> blocks, String code) {
         String salt = newSalt();
-        Lock lock = new Lock(UUID.randomUUID(), owner, salt, hash(salt, code));
+        return createWith(owner, blocks, salt, hash(salt, code));
+    }
+
+    /** Locks the blocks with the player's default code, or returns null if the player has none. */
+    public Lock createFromDefault(UUID owner, Collection<Block> blocks) {
+        Credentials credentials = defaults.get(owner);
+        if (credentials == null) {
+            return null;
+        }
+        return createWith(owner, blocks, credentials.salt(), credentials.hash());
+    }
+
+    private Lock createWith(UUID owner, Collection<Block> blocks, String salt, String hash) {
+        Lock lock = new Lock(UUID.randomUUID(), owner, salt, hash);
         for (Block block : blocks) {
             BlockPos pos = BlockPos.of(block);
             lock.positions.add(pos);
@@ -194,6 +238,24 @@ public final class LockManager {
         byId.put(lock.id, lock);
         markDirty();
         return lock;
+    }
+
+    public boolean hasDefault(UUID player) {
+        return defaults.containsKey(player);
+    }
+
+    /** Remembers this lock's code as the player's default code (only if they have none yet). */
+    public void rememberDefault(UUID player, Lock lock) {
+        if (!defaults.containsKey(player)) {
+            defaults.put(player, new Credentials(lock.salt, lock.hash));
+            markDirty();
+        }
+    }
+
+    public void clearDefault(UUID player) {
+        if (defaults.remove(player) != null) {
+            markDirty();
+        }
     }
 
     public void extend(Lock lock, Block block) {
@@ -211,7 +273,7 @@ public final class LockManager {
         markDirty();
     }
 
-    /** Blok zmizel (rozbit) - odebere jeho pozici ze zamku. */
+    /** A block is gone (broken): removes its position from the lock. */
     public void removePosition(Block block) {
         BlockPos pos = BlockPos.of(block);
         Lock lock = byPos.get(pos);
@@ -229,10 +291,26 @@ public final class LockManager {
         markDirty();
     }
 
+    /** Changes the code of a single lock. */
     public void setCode(Lock lock, String code) {
         lock.salt = newSalt();
         lock.hash = hash(lock.salt, code);
         lock.version++;
+        markDirty();
+    }
+
+    /** Changes the code of every lock owned by the player and makes it their default code. */
+    public void setCodeAll(UUID owner, String code) {
+        String salt = newSalt();
+        String hash = hash(salt, code);
+        for (Lock lock : byId.values()) {
+            if (lock.owner.equals(owner)) {
+                lock.salt = salt;
+                lock.hash = hash;
+                lock.version++;
+            }
+        }
+        defaults.put(owner, new Credentials(salt, hash));
         markDirty();
     }
 
@@ -257,7 +335,7 @@ public final class LockManager {
         }
     }
 
-    // ---------- odemceni hrace ----------
+    // ---------- player unlocks ----------
 
     public boolean isUnlocked(Player player, Lock lock) {
         Map<UUID, Unlock> map = unlocked.get(player.getUniqueId());
@@ -286,13 +364,13 @@ public final class LockManager {
         unlocked.remove(player);
     }
 
-    // ---------- spatne pokusy ----------
+    // ---------- wrong attempts ----------
 
     private static String key(UUID player, UUID lockId) {
         return player + ":" + lockId;
     }
 
-    /** Zbyvajici cas zablokovani v ms (0 = neni zablokovany). */
+    /** Remaining lockout time in ms (0 = not blocked). */
     public long lockoutRemaining(UUID player, UUID lockId) {
         String key = key(player, lockId);
         Attempt a = attempts.get(key);
@@ -307,7 +385,7 @@ public final class LockManager {
         return left;
     }
 
-    /** Zapocita spatny pokus a vrati kolik pokusu zbyva (0 = hrac je prave zablokovan). */
+    /** Counts a wrong attempt and returns the attempts left (0 = the player is blocked now). */
     public int registerFail(UUID player, UUID lockId) {
         int max = Math.max(1, plugin.getConfig().getInt("max-attempts", 3));
         Attempt a = attempts.computeIfAbsent(key(player, lockId), k -> new Attempt());

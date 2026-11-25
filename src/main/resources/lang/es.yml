@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>Introduce el código
+title-set: <dark_gray>Establece el código
+title-repeat: <dark_gray>Repite el código
+title-owner: <dark_gray>Cerradura del cofre
+title-trusted: <dark_gray>Jugadores de confianza
+title-remove: <dark_gray>¿Quitar la cerradura?
+title-scope: <dark_gray>Cambiar código para
+item-digit-lore: <gray>Haz clic para introducir
+item-del: <red>Borrar último dígito
+item-ok: <green>Confirmar
+item-change-code: <gold>Cambiar código
+item-change-code-lore: <gray>Establece un código nuevo
+item-trusted: <aqua>Jugadores de confianza
+item-trusted-lore: <gray>No necesitan el código
+item-trusted-count: '<gray>Cantidad: <white>%count%'
+item-remove: <red>Quitar cerradura
+item-remove-lore: <gray>El cofre quedará abierto para todos
+item-close: <red>Cerrar
+item-back: <yellow>Atrás
+item-yes: <green>Sí, quitar la cerradura
+item-no: <red>No, mantenerla
+item-trusted-on: <green>De confianza <gray>(clic para quitar)
+item-trusted-off: <gray>Clic para añadir
+item-scope-one: <gold>Solo este cofre
+item-scope-one-lore: <gray>Los demás cofres mantienen su código
+item-scope-all: <gold>Todos mis cofres
+item-scope-all-lore: <gray>También el código por defecto para cofres nuevos
+wrong-code: '<red>Código incorrecto. Intentos restantes: <white>%left%'
+locked-out: '<red>Demasiados intentos. Inténtalo de nuevo en: <white>%time%s</white>'
+code-too-short: '<red>Longitud mínima del código: <white>%min%'
+code-mismatch: <red>Los códigos no coinciden, inténtalo de nuevo.
+code-set: <green>El cofre está cerrado. Tú lo abres sin código.
+code-changed: <green>Se cambió el código del cofre.
+code-changed-all: <green>Se cambió el código en todos tus cofres.
+lock-removed: <yellow>Se quitó la cerradura.
+lock-skipped: <gray>El cofre sigue abierto. Ciérralo después con Shift + clic derecho sosteniendo un Tripwire Hook.
+locked-default: <green>Cofre cerrado con tu código.
+break-denied: <red>Solo el propietario puede romper este cofre.
+place-denied: <red>No puedes unir este cofre al cofre cerrado de otro jugador.

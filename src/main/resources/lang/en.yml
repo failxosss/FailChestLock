@@ -1,0 +1,44 @@
+# FailChestLock texts. Format: MiniMessage (https://docs.advntr.dev/minimessage/format.html)
+prefix: '<dark_gray>[<gold>FailChestLock</gold>]</dark_gray> '
+item-digit: <white><bold>%digit%
+item-code-filled: <green>*
+item-code-empty: <gray>_
+title-enter: <dark_gray>Enter code
+title-set: <dark_gray>Set code
+title-repeat: <dark_gray>Repeat code
+title-owner: <dark_gray>Chest lock
+title-trusted: <dark_gray>Trusted players
+title-remove: <dark_gray>Remove lock?
+title-scope: <dark_gray>Change code for
+item-digit-lore: <gray>Click to enter
+item-del: <red>Delete last digit
+item-ok: <green>Confirm
+item-change-code: <gold>Change code
+item-change-code-lore: <gray>Set a new code
+item-trusted: <aqua>Trusted players
+item-trusted-lore: <gray>They don't need the code
+item-trusted-count: '<gray>Count: <white>%count%'
+item-remove: <red>Remove lock
+item-remove-lore: <gray>The chest will be open to everyone
+item-close: <red>Close
+item-back: <yellow>Back
+item-yes: <green>Yes, remove the lock
+item-no: <red>No, keep it
+item-trusted-on: <green>Trusted <gray>(click to remove)
+item-trusted-off: <gray>Click to add
+item-scope-one: <gold>This chest only
+item-scope-one-lore: <gray>Other chests keep their code
+item-scope-all: <gold>All my chests
+item-scope-all-lore: <gray>Also the default code for new chests
+wrong-code: '<red>Wrong code. Attempts left: <white>%left%'
+locked-out: '<red>Too many attempts. Try again in: <white>%time%s</white>'
+code-too-short: '<red>Minimum code length: <white>%min%'
+code-mismatch: <red>The codes don't match, try again.
+code-set: <green>The chest is locked. You open it without a code.
+code-changed: <green>The chest code was changed.
+code-changed-all: <green>The code was changed on all your chests.
+lock-removed: <yellow>The lock was removed.
+lock-skipped: <gray>The chest stays unlocked. Lock it later with Shift + right-click holding a Tripwire Hook.
+locked-default: <green>Chest locked with your code.
+break-denied: <red>Only the owner can break this chest.
+place-denied: <red>You can't attach this chest to someone else's locked chest.

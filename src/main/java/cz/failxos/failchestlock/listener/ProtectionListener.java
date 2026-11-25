@@ -25,7 +25,7 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-/** Otevirani zamcenych chestek, ochrana pred rozbitim, vybuchy a hoppery. */
+/** Opening locked chests, protection against breaking, explosions and hoppers. */
 public final class ProtectionListener implements Listener {
 
     private final FailChestLock plugin;
@@ -46,7 +46,20 @@ public final class ProtectionListener implements Listener {
         return item == null || item.getType().isAir();
     }
 
-    // ---------- otevreni ----------
+    /** Locks the chest with the player's default code. Returns false if they have none. */
+    private boolean lockWithDefault(Player p, Block block) {
+        if (!manager().defaultCodeEnabled()) {
+            return false;
+        }
+        Lock lock = manager().createFromDefault(p.getUniqueId(), Containers.halves(block));
+        if (lock == null) {
+            return false;
+        }
+        plugin.messages().send(p, "locked-default");
+        return true;
+    }
+
+    // ---------- opening ----------
 
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onInteract(PlayerInteractEvent e) {
@@ -63,14 +76,18 @@ public final class ProtectionListener implements Listener {
         BlockPos pos = BlockPos.of(block);
 
         if (lock == null) {
-            // zamknuti uz stojici chestky nastrojem (Shift + pravy klik)
+            // lock an existing chest with the lock tool (Shift + right-click)
             Material tool = manager().lockTool();
             ItemStack item = e.getItem();
             if (mainHand && p.isSneaking() && tool != null && item != null && item.getType() == tool) {
                 e.setCancelled(true);
                 menus().later(() -> {
-                    if (p.isOnline() && manager().get(pos.block()) == null) {
-                        menus().openSet(p, pos, null, false, 1, null);
+                    Block current = pos.block();
+                    if (!p.isOnline() || current == null || manager().get(current) != null) {
+                        return;
+                    }
+                    if (!lockWithDefault(p, current)) {
+                        menus().openSet(p, pos, null, false, false, 1, null);
                     }
                 });
             }
@@ -107,7 +124,7 @@ public final class ProtectionListener implements Listener {
         }
     }
 
-    // ---------- pokladani ----------
+    // ---------- placing ----------
 
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onPlace(BlockPlaceEvent e) {
@@ -140,19 +157,23 @@ public final class ProtectionListener implements Listener {
             return;
         }
 
+        if (lockWithDefault(p, placed)) {
+            return;
+        }
+
         if (plugin.getConfig().getBoolean("auto-prompt-on-place", true)) {
             BlockPos pos = BlockPos.of(placed);
             menus().later(() -> {
                 Block block = pos.block();
                 if (p.isOnline() && block != null && manager().isLockable(block.getType())
                         && manager().get(block) == null) {
-                    menus().openSet(p, pos, null, false, 1, null);
+                    menus().openSet(p, pos, null, false, false, 1, null);
                 }
             });
         }
     }
 
-    // ---------- rozbijeni ----------
+    // ---------- breaking ----------
 
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onBreak(BlockBreakEvent e) {
@@ -173,7 +194,7 @@ public final class ProtectionListener implements Listener {
         manager().removePosition(e.getBlock());
     }
 
-    // ---------- vybuchy a ostatni zniceni ----------
+    // ---------- explosions and other destruction ----------
 
     @EventHandler(ignoreCancelled = true)
     public void onEntityExplode(EntityExplodeEvent e) {
@@ -196,7 +217,7 @@ public final class ProtectionListener implements Listener {
         }
     }
 
-    // ---------- hoppery ----------
+    // ---------- hoppers ----------
 
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onHopper(InventoryMoveItemEvent e) {

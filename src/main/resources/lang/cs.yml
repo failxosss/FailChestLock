@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>Zadej kód
+title-set: <dark_gray>Nastav kód
+title-repeat: <dark_gray>Zopakuj kód
+title-owner: <dark_gray>Zámek chestky
+title-trusted: <dark_gray>Důvěryhodní hráči
+title-remove: <dark_gray>Odebrat zámek?
+title-scope: <dark_gray>Změnit kód pro
+item-digit-lore: <gray>Klikni pro zadání
+item-del: <red>Smazat poslední číslici
+item-ok: <green>Potvrdit
+item-change-code: <gold>Změnit kód
+item-change-code-lore: <gray>Nastav nový kód
+item-trusted: <aqua>Důvěryhodní hráči
+item-trusted-lore: <gray>Nemusí zadávat kód
+item-trusted-count: '<gray>Počet: <white>%count%'
+item-remove: <red>Odebrat zámek
+item-remove-lore: <gray>Chestka bude otevřená pro všechny
+item-close: <red>Zavřít
+item-back: <yellow>Zpět
+item-yes: <green>Ano, odebrat zámek
+item-no: <red>Ne, ponechat
+item-trusted-on: <green>Důvěryhodný <gray>(klikni pro odebrání)
+item-trusted-off: <gray>Klikni pro přidání
+item-scope-one: <gold>Jen tuto chestku
+item-scope-one-lore: <gray>Ostatní chestky si kód ponechají
+item-scope-all: <gold>Všechny moje chestky
+item-scope-all-lore: <gray>Včetně výchozího kódu pro nové chestky
+wrong-code: '<red>Špatný kód. Zbývající pokusy: <white>%left%'
+locked-out: '<red>Příliš mnoho pokusů. Zkus to znovu za: <white>%time%s</white>'
+code-too-short: '<red>Minimální délka kódu: <white>%min%'
+code-mismatch: <red>Kódy se neshodují, zkus to znovu.
+code-set: <green>Chestka je zamčená. Ty ji otevřeš bez kódu.
+code-changed: <green>Kód chestky byl změněn.
+code-changed-all: <green>Kód byl změněn na všech tvých chestkách.
+lock-removed: <yellow>Zámek byl odebrán.
+lock-skipped: <gray>Chestka zůstala odemčená. Zamkneš ji později pomocí Shift + pravý klik s Tripwire Hook v ruce.
+locked-default: <green>Chestka zamčena tvým kódem.
+break-denied: <red>Tuto chestku může rozbít jen její majitel.
+place-denied: <red>Tuto chestku nelze připojit k cizí zamčené chestce.

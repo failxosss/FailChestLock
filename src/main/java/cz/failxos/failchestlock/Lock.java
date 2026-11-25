@@ -4,14 +4,14 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.UUID;
 
-/** Jeden zamek. Dvojita chestka = jeden zamek se dvema pozicemi. */
+/** One lock. A double chest is a single lock with two positions. */
 public final class Lock {
 
     public final UUID id;
     public final UUID owner;
     public String salt;
     public String hash;
-    /** Zvysuje se pri zmene kodu, aby zmizela drivejsi odemceni. */
+    /** Incremented when the code changes, so earlier unlocks stop working. */
     public int version;
     public final Set<UUID> trusted = new LinkedHashSet<>();
     public final Set<BlockPos> positions = new LinkedHashSet<>();

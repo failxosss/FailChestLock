@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>Inserisci il codice
+title-set: <dark_gray>Imposta il codice
+title-repeat: <dark_gray>Ripeti il codice
+title-owner: <dark_gray>Lucchetto del baule
+title-trusted: <dark_gray>Giocatori fidati
+title-remove: <dark_gray>Rimuovere il lucchetto?
+title-scope: <dark_gray>Cambia il codice per
+item-digit-lore: <gray>Clicca per inserire
+item-del: <red>Cancella l'ultima cifra
+item-ok: <green>Conferma
+item-change-code: <gold>Cambia codice
+item-change-code-lore: <gray>Imposta un nuovo codice
+item-trusted: <aqua>Giocatori fidati
+item-trusted-lore: <gray>Non hanno bisogno del codice
+item-trusted-count: '<gray>Numero: <white>%count%'
+item-remove: <red>Rimuovi lucchetto
+item-remove-lore: <gray>Il baule sarà aperto a tutti
+item-close: <red>Chiudi
+item-back: <yellow>Indietro
+item-yes: <green>Sì, rimuovi il lucchetto
+item-no: <red>No, mantienilo
+item-trusted-on: <green>Fidato <gray>(clicca per rimuovere)
+item-trusted-off: <gray>Clicca per aggiungere
+item-scope-one: <gold>Solo questo baule
+item-scope-one-lore: <gray>Gli altri bauli mantengono il codice
+item-scope-all: <gold>Tutti i miei bauli
+item-scope-all-lore: <gray>Anche il codice predefinito per i nuovi bauli
+wrong-code: '<red>Codice errato. Tentativi rimasti: <white>%left%'
+locked-out: '<red>Troppi tentativi. Riprova tra: <white>%time%s</white>'
+code-too-short: '<red>Lunghezza minima del codice: <white>%min%'
+code-mismatch: <red>I codici non coincidono, riprova.
+code-set: <green>Il baule è bloccato. Tu lo apri senza codice.
+code-changed: <green>Il codice del baule è stato cambiato.
+code-changed-all: <green>Il codice è stato cambiato su tutti i tuoi bauli.
+lock-removed: <yellow>Il lucchetto è stato rimosso.
+lock-skipped: <gray>Il baule resta sbloccato. Bloccalo dopo con Maiusc + clic destro tenendo un Tripwire Hook.
+locked-default: <green>Baule bloccato con il tuo codice.
+break-denied: <red>Solo il proprietario può rompere questo baule.
+place-denied: <red>Non puoi collegare questo baule al baule bloccato di un altro giocatore.

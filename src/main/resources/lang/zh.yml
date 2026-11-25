@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>输入密码
+title-set: <dark_gray>设置密码
+title-repeat: <dark_gray>再次输入密码
+title-owner: <dark_gray>箱子锁
+title-trusted: <dark_gray>受信任的玩家
+title-remove: <dark_gray>移除锁？
+title-scope: <dark_gray>修改密码范围
+item-digit-lore: <gray>点击输入
+item-del: <red>删除最后一位
+item-ok: <green>确认
+item-change-code: <gold>修改密码
+item-change-code-lore: <gray>设置新密码
+item-trusted: <aqua>受信任的玩家
+item-trusted-lore: <gray>他们无需输入密码
+item-trusted-count: '<gray>数量: <white>%count%'
+item-remove: <red>移除锁
+item-remove-lore: <gray>箱子将对所有人开放
+item-close: <red>关闭
+item-back: <yellow>返回
+item-yes: <green>是，移除锁
+item-no: <red>否，保留
+item-trusted-on: <green>已信任 <gray>(点击移除)
+item-trusted-off: <gray>点击添加
+item-scope-one: <gold>仅此箱子
+item-scope-one-lore: <gray>其他箱子保持原密码
+item-scope-all: <gold>我的所有箱子
+item-scope-all-lore: <gray>同时修改新箱子的默认密码
+wrong-code: '<red>密码错误。剩余尝试次数: <white>%left%'
+locked-out: '<red>尝试次数过多，请在以下时间后重试: <white>%time%s</white>'
+code-too-short: '<red>密码最短长度: <white>%min%'
+code-mismatch: <red>两次密码不一致，请重试。
+code-set: <green>箱子已上锁。你无需密码即可打开。
+code-changed: <green>箱子密码已修改。
+code-changed-all: <green>你所有箱子的密码已修改。
+lock-removed: <yellow>锁已移除。
+lock-skipped: <gray>箱子未上锁。之后可手持绊线钩，按住 Shift 右键上锁。
+locked-default: <green>箱子已用你的密码上锁。
+break-denied: <red>只有主人可以破坏这个箱子。
+place-denied: <red>不能将此箱子与其他玩家已上锁的箱子相连。

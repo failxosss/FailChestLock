@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>कोड दर्ज करें
+title-set: <dark_gray>कोड सेट करें
+title-repeat: <dark_gray>कोड दोबारा दर्ज करें
+title-owner: <dark_gray>चेस्ट लॉक
+title-trusted: <dark_gray>भरोसेमंद खिलाड़ी
+title-remove: <dark_gray>लॉक हटाएँ?
+title-scope: <dark_gray>कोड बदलें
+item-digit-lore: <gray>दर्ज करने के लिए क्लिक करें
+item-del: <red>आखिरी अंक मिटाएँ
+item-ok: <green>पुष्टि करें
+item-change-code: <gold>कोड बदलें
+item-change-code-lore: <gray>नया कोड सेट करें
+item-trusted: <aqua>भरोसेमंद खिलाड़ी
+item-trusted-lore: <gray>उन्हें कोड की ज़रूरत नहीं
+item-trusted-count: '<gray>संख्या: <white>%count%'
+item-remove: <red>लॉक हटाएँ
+item-remove-lore: <gray>चेस्ट सबके लिए खुल जाएगा
+item-close: <red>बंद करें
+item-back: <yellow>वापस
+item-yes: <green>हाँ, लॉक हटाएँ
+item-no: <red>नहीं, रहने दें
+item-trusted-on: <green>भरोसेमंद <gray>(हटाने के लिए क्लिक करें)
+item-trusted-off: <gray>जोड़ने के लिए क्लिक करें
+item-scope-one: <gold>सिर्फ़ यह चेस्ट
+item-scope-one-lore: <gray>बाकी चेस्ट का कोड वही रहेगा
+item-scope-all: <gold>मेरे सभी चेस्ट
+item-scope-all-lore: <gray>नए चेस्ट का डिफ़ॉल्ट कोड भी बदलेगा
+wrong-code: '<red>गलत कोड। बचे हुए प्रयास: <white>%left%'
+locked-out: '<red>बहुत ज़्यादा प्रयास। दोबारा कोशिश करें: <white>%time%s</white>'
+code-too-short: '<red>कोड की न्यूनतम लंबाई: <white>%min%'
+code-mismatch: <red>कोड मेल नहीं खाते, फिर कोशिश करें।
+code-set: <green>चेस्ट लॉक हो गया। आप इसे बिना कोड के खोल सकते हैं।
+code-changed: <green>चेस्ट का कोड बदल दिया गया।
+code-changed-all: <green>आपके सभी चेस्ट का कोड बदल दिया गया।
+lock-removed: <yellow>लॉक हटा दिया गया।
+lock-skipped: <gray>चेस्ट लॉक नहीं हुआ। बाद में Tripwire Hook हाथ में लेकर Shift + राइट-क्लिक से लॉक करें।
+locked-default: <green>चेस्ट आपके कोड से लॉक हो गया।
+break-denied: <red>इस चेस्ट को सिर्फ़ मालिक तोड़ सकता है।
+place-denied: <red>इस चेस्ट को किसी और के लॉक चेस्ट से नहीं जोड़ा जा सकता।

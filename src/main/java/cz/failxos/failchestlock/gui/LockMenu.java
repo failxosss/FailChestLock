@@ -7,25 +7,27 @@ import org.bukkit.inventory.InventoryHolder;
 
 import java.util.UUID;
 
-/** Stav jednoho otevreneho menu zamku. */
+/** State of one open lock menu. */
 public final class LockMenu implements InventoryHolder {
 
-    public enum Type { ENTER, SET, OWNER, TRUSTED, REMOVE }
+    public enum Type { ENTER, SET, SCOPE, OWNER, TRUSTED, REMOVE }
 
     public final Type type;
     public final UUID viewer;
     public final BlockPos pos;
     public final Lock lock;
 
-    /** SET: true = zmena kodu existujiciho zamku, false = prvni zamknuti. */
+    /** SET: true = changing the code of an existing lock, false = locking for the first time. */
     public boolean change;
-    /** SET: 1 = zadani kodu, 2 = zopakovani. */
+    /** SET (change): true = apply to all of the owner's chests and the default code. */
+    public boolean all;
+    /** SET: 1 = enter the code, 2 = repeat it. */
     public int stage = 1;
     public String firstCode;
     public final StringBuilder input = new StringBuilder();
-    /** TRUSTED: hrac na kazdem slotu. */
+    /** TRUSTED: the player in each slot. */
     public UUID[] listed = new UUID[0];
-    /** Menu je hotove / prechazi jinam - dalsi kliky se ignoruji. */
+    /** The menu is done or switching to another one, further clicks are ignored. */
     public boolean finished;
 
     private Inventory inventory;

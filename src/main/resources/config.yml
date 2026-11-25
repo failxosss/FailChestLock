@@ -1,9 +1,15 @@
-# FailChestLock - by Failxos (Minecraft 1.21.11)
-# Vse se ovlada pres GUI, plugin nema zadne prikazy.
-# Zpravy pouzivaji MiniMessage: https://docs.advntr.dev/minimessage/format.html
-# Permission failchestlock.bypass otevre/rozbije jakoukoliv zamcenou chestku.
+# FailChestLock by Failxos (Minecraft 1.21.11)
+# Chest locks with a code. Everything is controlled through menus, the plugin has no commands.
+# All texts live in plugins/FailChestLock/lang/<language>.yml
+# The permission failchestlock.bypass lets a player open and break any locked chest.
 
-# Co jde zamknout
+# Language of all messages and menus. Restart the server after changing it.
+# Bundled: en, zh, hi, es, fr, ar, bn, pt, ru, ur, id, de, ja, tr, vi, ko, it, te, mr, ta, cs, sk
+# To add your own language, create lang/<code>.yml and put the code here.
+# Keys missing in a language file fall back to English.
+language: en
+
+# Blocks that can be locked
 lockable:
   - CHEST
   - TRAPPED_CHEST
@@ -13,28 +19,34 @@ code:
   min-length: 4
   max-length: 6
 
-# Po zadani spravneho kodu je chestka odemcena na tuto dobu (minuty)
+# Default code: a player enters a code on their first chest, every chest placed
+# afterwards is locked with the same code automatically (no menu).
+default-code:
+  enabled: true
+  # true = removing a lock also deletes the player's default code
+  # false = removing a lock only affects that one chest
+  clear-on-remove: false
+
+# After a correct code the chest stays unlocked for this many minutes
 unlock-minutes: 5
 
-# Spatne pokusy: po max-attempts spatnych kodech je hrac zablokovan na lockout-seconds
+# After max-attempts wrong codes the player is blocked for lockout-seconds
 max-attempts: 3
 lockout-seconds: 60
 
-# Po polozeni chestky se hned otevre menu pro nastaveni kodu
+# Open the code menu right after placing a chest (only when the player has no default code yet)
 auto-prompt-on-place: true
 
-# Item, kterym se (se Shiftem + pravy klik) zamkne uz stojici chestka. Prazdne = vypnuto.
+# Item used (Shift + right-click) to lock an existing chest. Empty = disabled.
 lock-tool: TRIPWIRE_HOOK
 
-# Ochrany
 protect:
-  hoppers: true      # hopper nic nevytahne ani nevlozi
-  explosions: true   # vybuchy zamcene chestky neznici
+  hoppers: true      # hoppers can't take items from or put items into locked chests
+  explosions: true   # explosions don't destroy locked chests
 
-# Napojeni na ItemsAdder: misto vanilla itemu v menu muzes pouzit vlastni ikony.
-# Do kazde polozky napis namespace:item_id (napr. "myicons:digit_5"). Prazdne = vanilla item.
-# Nazvy a popisky itemu zustavaji z "messages" nize, ItemsAdder dodava jen vzhled.
-# Funguje i bez ItemsAdderu (pak se pouziji vanilla itemy).
+# ItemsAdder icons (optional). Put namespace:item_id for any button, empty = vanilla item.
+# Names and descriptions still come from the language file, ItemsAdder only provides the look.
+# Works without ItemsAdder installed (vanilla items are used then).
 itemsadder:
   enabled: true
   icons:
@@ -60,10 +72,12 @@ itemsadder:
     back: ""
     yes: ""
     no: ""
+    scope-one: ""
+    scope-all: ""
 
 gui:
-  # Textury hlav s cisly 0-9 (cast URL za textures.minecraft.net/texture/).
-  # Prazdna hodnota = papir s cislem. (ItemsAdder ikona digit-N ma prednost.)
+  # Texture hashes of the number heads 0-9 (the part after textures.minecraft.net/texture/).
+  # Empty value = a paper with the number. An ItemsAdder icon digit-N takes priority.
   digit-heads:
     - "55a224807693978ed834355f9e5145f9c56ef68cf6f2c9e1734a46e246aae1"
     - "31a9463fd3c433d5e1d9fec6d5d4b09a83a970b0b74dd546ce67a73348caab"
@@ -75,47 +89,3 @@ gui:
     - "d4ba6ac07d422377a855793f36dea2ed240223f52fd1648181612ecd1a0cfd5"
     - "c61a8a641437be9aea207253dd3f25440d954ea2b5866c552f386b29ac4d049"
     - "a1928e1bfd86a9b79397c4cb4b65ef99af49b7d5f7957ad62c0c699a622cfbe"
-
-messages:
-  prefix: "<dark_gray>[<gold>FailChestLock</gold>]</dark_gray> "
-
-  # Nadpisy menu
-  title-enter: "<dark_gray>Zadej kód"
-  title-set: "<dark_gray>Nastav kód"
-  title-repeat: "<dark_gray>Zopakuj kód"
-  title-owner: "<dark_gray>Zámek chestky"
-  title-trusted: "<dark_gray>Důvěryhodní hráči"
-  title-remove: "<dark_gray>Odebrat zámek?"
-
-  # Itemy v menu
-  item-digit: "<white><bold>%digit%"
-  item-digit-lore: "<gray>Klikni pro zadání"
-  item-del: "<red>Smazat číslici"
-  item-ok: "<green>Potvrdit"
-  item-code-filled: "<green>*"
-  item-code-empty: "<gray>_"
-  item-change-code: "<gold>Změnit kód"
-  item-change-code-lore: "<gray>Nastav nový kód chestky"
-  item-trusted: "<aqua>Důvěryhodní hráči"
-  item-trusted-lore: "<gray>Tito hráči nemusí zadávat kód"
-  item-trusted-count: "<gray>Počet: <white>%count%"
-  item-remove: "<red>Odebrat zámek"
-  item-remove-lore: "<gray>Chestka bude otevřená pro všechny"
-  item-close: "<red>Zavřít"
-  item-back: "<yellow>Zpět"
-  item-yes: "<green>Ano, odebrat zámek"
-  item-no: "<red>Ne, ponechat"
-  item-trusted-on: "<green>Důvěryhodný <gray>(klikni pro odebrání)"
-  item-trusted-off: "<gray>Klikni pro přidání"
-
-  # Zpravy v chatu
-  wrong-code: "<red>Špatný kód. Zbývající pokusy: <white>%left%"
-  locked-out: "<red>Příliš mnoho pokusů. Zkus to znovu za <white>%time%s</white>."
-  code-too-short: "<red>Kód musí mít alespoň <white>%min%</white> číslic."
-  code-mismatch: "<red>Kódy se neshodují, zkus to znovu."
-  code-set: "<green>Chestka je zamčená. Ty ji otevřeš bez kódu."
-  code-changed: "<green>Kód chestky byl změněn."
-  lock-removed: "<yellow>Zámek byl odebrán."
-  lock-skipped: "<gray>Chestka zůstala odemčená. Zamkneš ji později: Shift + pravý klik s tripwire hookem v ruce."
-  break-denied: "<red>Tuhle chestku může rozbít jen její majitel."
-  place-denied: "<red>Tuhle chestku nejde připojit k cizí zamčené chestce. Postav ji jinde nebo se Shiftem."

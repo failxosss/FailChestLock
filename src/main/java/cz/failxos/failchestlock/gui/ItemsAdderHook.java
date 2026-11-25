@@ -10,8 +10,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Napojeni na ItemsAdder pres reflexi (zadna build zavislost, plugin funguje i bez ItemsAdderu).
- * Ikony se berou z config.yml: itemsadder.icons.<klic> = namespace:item_id
+ * ItemsAdder integration through reflection (no build dependency, the plugin works without ItemsAdder).
+ * Icons come from config.yml: itemsadder.icons.&lt;key&gt; = namespace:item_id
  */
 public final class ItemsAdderHook {
 
@@ -24,7 +24,7 @@ public final class ItemsAdderHook {
         this.plugin = plugin;
     }
 
-    /** Vrati kopii ItemsAdder itemu pro dany klic ikony, nebo null (pak se pouzije vanilla item). */
+    /** Returns a copy of the ItemsAdder item for the icon key, or null (a vanilla item is used then). */
     public ItemStack icon(String key) {
         if (!plugin.getConfig().getBoolean("itemsadder.enabled", true)) {
             return null;
@@ -46,7 +46,7 @@ public final class ItemsAdderHook {
             }
             Object stack = getInstance.invoke(null, id.trim());
             if (stack == null) {
-                warnOnce(key, "ItemsAdder item nenalezen: " + id + " (ikona " + key + ")");
+                warnOnce(key, "ItemsAdder item not found: " + id + " (icon " + key + ")");
                 return null;
             }
             Object item = getItemStack.invoke(stack);
@@ -54,7 +54,7 @@ public final class ItemsAdderHook {
                 return result.clone();
             }
         } catch (ReflectiveOperationException | RuntimeException e) {
-            warnOnce(key, "Nepodarilo se nacist ItemsAdder ikonu " + key + ": " + e);
+            warnOnce(key, "Could not load ItemsAdder icon " + key + ": " + e);
         }
         return null;
     }

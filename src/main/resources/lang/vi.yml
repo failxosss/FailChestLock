@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>Nhập mã
+title-set: <dark_gray>Đặt mã
+title-repeat: <dark_gray>Nhập lại mã
+title-owner: <dark_gray>Khóa rương
+title-trusted: <dark_gray>Người chơi tin cậy
+title-remove: <dark_gray>Gỡ khóa?
+title-scope: <dark_gray>Đổi mã cho
+item-digit-lore: <gray>Nhấn để nhập
+item-del: <red>Xóa chữ số cuối
+item-ok: <green>Xác nhận
+item-change-code: <gold>Đổi mã
+item-change-code-lore: <gray>Đặt mã mới
+item-trusted: <aqua>Người chơi tin cậy
+item-trusted-lore: <gray>Họ không cần nhập mã
+item-trusted-count: '<gray>Số lượng: <white>%count%'
+item-remove: <red>Gỡ khóa
+item-remove-lore: <gray>Rương sẽ mở cho mọi người
+item-close: <red>Đóng
+item-back: <yellow>Quay lại
+item-yes: <green>Có, gỡ khóa
+item-no: <red>Không, giữ lại
+item-trusted-on: <green>Tin cậy <gray>(nhấn để xóa)
+item-trusted-off: <gray>Nhấn để thêm
+item-scope-one: <gold>Chỉ rương này
+item-scope-one-lore: <gray>Các rương khác giữ nguyên mã
+item-scope-all: <gold>Tất cả rương của tôi
+item-scope-all-lore: <gray>Cả mã mặc định cho rương mới
+wrong-code: '<red>Sai mã. Số lần thử còn lại: <white>%left%'
+locked-out: '<red>Thử quá nhiều lần. Thử lại sau: <white>%time%s</white>'
+code-too-short: '<red>Độ dài mã tối thiểu: <white>%min%'
+code-mismatch: <red>Hai mã không khớp, hãy thử lại.
+code-set: <green>Rương đã khóa. Bạn mở được mà không cần mã.
+code-changed: <green>Đã đổi mã của rương.
+code-changed-all: <green>Đã đổi mã trên tất cả rương của bạn.
+lock-removed: <yellow>Đã gỡ khóa.
+lock-skipped: <gray>Rương vẫn chưa khóa. Khóa sau bằng Shift + chuột phải khi cầm Tripwire Hook.
+locked-default: <green>Rương đã được khóa bằng mã của bạn.
+break-denied: <red>Chỉ chủ sở hữu mới phá được rương này.
+place-denied: <red>Bạn không thể nối rương này với rương đã khóa của người khác.

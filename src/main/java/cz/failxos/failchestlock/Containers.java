@@ -14,7 +14,7 @@ public final class Containers {
     private Containers() {
     }
 
-    /** Vrati vsechny pulky kontejneru (u dvojite chestky obe, jinak jen dany blok). */
+    /** Returns every half of a container (both halves of a double chest, otherwise just the block). */
     public static List<Block> halves(Block block) {
         List<Block> list = new ArrayList<>(2);
         BlockState state = block.getState();

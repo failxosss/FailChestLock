@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>कोड टाका
+title-set: <dark_gray>कोड सेट करा
+title-repeat: <dark_gray>कोड पुन्हा टाका
+title-owner: <dark_gray>चेस्ट लॉक
+title-trusted: <dark_gray>विश्वासू खेळाडू
+title-remove: <dark_gray>लॉक काढायचा?
+title-scope: <dark_gray>कोड बदला
+item-digit-lore: <gray>टाकण्यासाठी क्लिक करा
+item-del: <red>शेवटचा अंक पुसा
+item-ok: <green>पुष्टी करा
+item-change-code: <gold>कोड बदला
+item-change-code-lore: <gray>नवीन कोड सेट करा
+item-trusted: <aqua>विश्वासू खेळाडू
+item-trusted-lore: <gray>त्यांना कोड टाकावा लागत नाही
+item-trusted-count: '<gray>संख्या: <white>%count%'
+item-remove: <red>लॉक काढा
+item-remove-lore: <gray>चेस्ट सर्वांसाठी उघडा होईल
+item-close: <red>बंद करा
+item-back: <yellow>मागे
+item-yes: <green>होय, लॉक काढा
+item-no: <red>नाही, ठेवा
+item-trusted-on: <green>विश्वासू <gray>(काढण्यासाठी क्लिक करा)
+item-trusted-off: <gray>जोडण्यासाठी क्लिक करा
+item-scope-one: <gold>फक्त हा चेस्ट
+item-scope-one-lore: <gray>इतर चेस्टचा कोड तसाच राहील
+item-scope-all: <gold>माझे सर्व चेस्ट
+item-scope-all-lore: <gray>नवीन चेस्टसाठीचा डिफॉल्ट कोडही बदलेल
+wrong-code: '<red>चुकीचा कोड. उरलेले प्रयत्न: <white>%left%'
+locked-out: '<red>खूप प्रयत्न झाले. पुन्हा प्रयत्न करा: <white>%time%s</white>'
+code-too-short: '<red>कोडची किमान लांबी: <white>%min%'
+code-mismatch: <red>कोड जुळत नाहीत, पुन्हा प्रयत्न करा.
+code-set: <green>चेस्ट लॉक झाला. तुम्ही तो कोडशिवाय उघडू शकता.
+code-changed: <green>चेस्टचा कोड बदलला.
+code-changed-all: <green>तुमच्या सर्व चेस्टचा कोड बदलला.
+lock-removed: <yellow>लॉक काढला.
+lock-skipped: <gray>चेस्ट लॉक झाला नाही. नंतर Tripwire Hook हातात घेऊन Shift + उजवे क्लिक करून लॉक करा.
+locked-default: <green>चेस्ट तुमच्या कोडने लॉक झाला.
+break-denied: <red>हा चेस्ट फक्त मालकच तोडू शकतो.
+place-denied: <red>हा चेस्ट दुसऱ्याच्या लॉक चेस्टला जोडता येत नाही.

@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>کوڈ درج کریں
+title-set: <dark_gray>کوڈ سیٹ کریں
+title-repeat: <dark_gray>کوڈ دوبارہ درج کریں
+title-owner: <dark_gray>چیسٹ لاک
+title-trusted: <dark_gray>قابلِ اعتماد کھلاڑی
+title-remove: <dark_gray>لاک ہٹائیں؟
+title-scope: <dark_gray>کوڈ تبدیل کریں
+item-digit-lore: <gray>درج کرنے کے لیے کلک کریں
+item-del: <red>آخری ہندسہ مٹائیں
+item-ok: <green>تصدیق کریں
+item-change-code: <gold>کوڈ تبدیل کریں
+item-change-code-lore: <gray>نیا کوڈ سیٹ کریں
+item-trusted: <aqua>قابلِ اعتماد کھلاڑی
+item-trusted-lore: <gray>انہیں کوڈ کی ضرورت نہیں
+item-trusted-count: '<gray>تعداد: <white>%count%'
+item-remove: <red>لاک ہٹائیں
+item-remove-lore: <gray>چیسٹ سب کے لیے کھل جائے گا
+item-close: <red>بند کریں
+item-back: <yellow>واپس
+item-yes: <green>ہاں، لاک ہٹائیں
+item-no: <red>نہیں، رہنے دیں
+item-trusted-on: <green>قابلِ اعتماد <gray>(ہٹانے کے لیے کلک کریں)
+item-trusted-off: <gray>شامل کرنے کے لیے کلک کریں
+item-scope-one: <gold>صرف یہ چیسٹ
+item-scope-one-lore: <gray>باقی چیسٹ کا کوڈ وہی رہے گا
+item-scope-all: <gold>میرے تمام چیسٹ
+item-scope-all-lore: <gray>نئے چیسٹ کا ڈیفالٹ کوڈ بھی بدلے گا
+wrong-code: '<red>غلط کوڈ۔ باقی کوششیں: <white>%left%'
+locked-out: '<red>بہت زیادہ کوششیں۔ دوبارہ کوشش کریں: <white>%time%s</white>'
+code-too-short: '<red>کوڈ کی کم از کم لمبائی: <white>%min%'
+code-mismatch: <red>کوڈ مماثل نہیں، دوبارہ کوشش کریں۔
+code-set: <green>چیسٹ لاک ہو گیا۔ آپ اسے بغیر کوڈ کے کھول سکتے ہیں۔
+code-changed: <green>چیسٹ کا کوڈ تبدیل کر دیا گیا۔
+code-changed-all: <green>آپ کے تمام چیسٹ کا کوڈ تبدیل کر دیا گیا۔
+lock-removed: <yellow>لاک ہٹا دیا گیا۔
+lock-skipped: <gray>چیسٹ لاک نہیں ہوا۔ بعد میں Tripwire Hook ہاتھ میں لے کر Shift + رائٹ کلک سے لاک کریں۔
+locked-default: <green>چیسٹ آپ کے کوڈ سے لاک ہو گیا۔
+break-denied: <red>اس چیسٹ کو صرف مالک توڑ سکتا ہے۔
+place-denied: <red>اس چیسٹ کو کسی اور کے لاک شدہ چیسٹ سے نہیں جوڑا جا سکتا۔

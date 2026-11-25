@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>코드 입력
+title-set: <dark_gray>코드 설정
+title-repeat: <dark_gray>코드 다시 입력
+title-owner: <dark_gray>상자 잠금
+title-trusted: <dark_gray>신뢰하는 플레이어
+title-remove: <dark_gray>잠금을 해제할까요?
+title-scope: <dark_gray>코드 변경 대상
+item-digit-lore: <gray>클릭하여 입력
+item-del: <red>마지막 숫자 지우기
+item-ok: <green>확인
+item-change-code: <gold>코드 변경
+item-change-code-lore: <gray>새 코드 설정
+item-trusted: <aqua>신뢰하는 플레이어
+item-trusted-lore: <gray>코드를 입력할 필요가 없습니다
+item-trusted-count: '<gray>인원: <white>%count%'
+item-remove: <red>잠금 해제
+item-remove-lore: <gray>상자가 모두에게 열립니다
+item-close: <red>닫기
+item-back: <yellow>뒤로
+item-yes: <green>예, 잠금 해제
+item-no: <red>아니요, 유지
+item-trusted-on: <green>신뢰함 <gray>(클릭하여 제거)
+item-trusted-off: <gray>클릭하여 추가
+item-scope-one: <gold>이 상자만
+item-scope-one-lore: <gray>다른 상자는 기존 코드를 유지합니다
+item-scope-all: <gold>내 모든 상자
+item-scope-all-lore: <gray>새 상자의 기본 코드도 함께 변경
+wrong-code: '<red>코드가 틀렸습니다. 남은 횟수: <white>%left%'
+locked-out: '<red>시도 횟수가 너무 많습니다. 다음 시간 후 다시 시도: <white>%time%s</white>'
+code-too-short: '<red>최소 코드 길이: <white>%min%'
+code-mismatch: <red>코드가 일치하지 않습니다. 다시 시도하세요.
+code-set: <green>상자가 잠겼습니다. 당신은 코드 없이 열 수 있습니다.
+code-changed: <green>상자 코드가 변경되었습니다.
+code-changed-all: <green>내 모든 상자의 코드가 변경되었습니다.
+lock-removed: <yellow>잠금이 해제되었습니다.
+lock-skipped: <gray>상자가 잠기지 않았습니다. 나중에 Tripwire Hook을 들고 Shift + 우클릭하여 잠글 수 있습니다.
+locked-default: <green>내 코드로 상자를 잠갔습니다.
+break-denied: <red>이 상자는 주인만 부술 수 있습니다.
+place-denied: <red>다른 플레이어의 잠긴 상자에는 연결할 수 없습니다.

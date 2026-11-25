@@ -9,7 +9,7 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
     <name>FailChestLock</name>
-    <description>Zamky na chestky pres GUI - by Failxos</description>
+    <description>Chest locks with a code, controlled through menus - by Failxos</description>
 
     <properties>
         <maven.compiler.release>21</maven.compiler.release>

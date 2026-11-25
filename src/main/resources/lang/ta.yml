@@ -1,0 +1,40 @@
+# FailChestLock language file. Keys missing here fall back to en.yml.
+title-enter: <dark_gray>குறியீட்டை உள்ளிடவும்
+title-set: <dark_gray>குறியீட்டை அமைக்கவும்
+title-repeat: <dark_gray>குறியீட்டை மீண்டும் உள்ளிடவும்
+title-owner: <dark_gray>பெட்டி பூட்டு
+title-trusted: <dark_gray>நம்பகமான வீரர்கள்
+title-remove: <dark_gray>பூட்டை நீக்கவா?
+title-scope: <dark_gray>குறியீட்டை மாற்று
+item-digit-lore: <gray>உள்ளிட கிளிக் செய்யவும்
+item-del: <red>கடைசி இலக்கத்தை நீக்கு
+item-ok: <green>உறுதிப்படுத்து
+item-change-code: <gold>குறியீட்டை மாற்று
+item-change-code-lore: <gray>புதிய குறியீட்டை அமை
+item-trusted: <aqua>நம்பகமான வீரர்கள்
+item-trusted-lore: <gray>அவர்களுக்கு குறியீடு தேவையில்லை
+item-trusted-count: '<gray>எண்ணிக்கை: <white>%count%'
+item-remove: <red>பூட்டை நீக்கு
+item-remove-lore: <gray>பெட்டி அனைவருக்கும் திறந்திருக்கும்
+item-close: <red>மூடு
+item-back: <yellow>பின்செல்
+item-yes: <green>ஆம், பூட்டை நீக்கு
+item-no: <red>இல்லை, வைத்திரு
+item-trusted-on: <green>நம்பகமானவர் <gray>(நீக்க கிளிக் செய்யவும்)
+item-trusted-off: <gray>சேர்க்க கிளிக் செய்யவும்
+item-scope-one: <gold>இந்தப் பெட்டி மட்டும்
+item-scope-one-lore: <gray>மற்ற பெட்டிகளின் குறியீடு மாறாது
+item-scope-all: <gold>என் அனைத்துப் பெட்டிகளும்
+item-scope-all-lore: <gray>புதிய பெட்டிகளுக்கான இயல்புநிலை குறியீடும் மாறும்
+wrong-code: '<red>தவறான குறியீடு. மீதமுள்ள முயற்சிகள்: <white>%left%'
+locked-out: '<red>அதிக முயற்சிகள். மீண்டும் முயலவும்: <white>%time%s</white>'
+code-too-short: '<red>குறியீட்டின் குறைந்தபட்ச நீளம்: <white>%min%'
+code-mismatch: <red>குறியீடுகள் பொருந்தவில்லை, மீண்டும் முயலவும்.
+code-set: <green>பெட்டி பூட்டப்பட்டது. நீங்கள் குறியீடு இல்லாமல் திறக்கலாம்.
+code-changed: <green>பெட்டியின் குறியீடு மாற்றப்பட்டது.
+code-changed-all: <green>உங்கள் அனைத்துப் பெட்டிகளின் குறியீடும் மாற்றப்பட்டது.
+lock-removed: <yellow>பூட்டு நீக்கப்பட்டது.
+lock-skipped: <gray>பெட்டி பூட்டப்படவில்லை. பின்னர் Tripwire Hook கையில் வைத்து Shift + வலது கிளிக் செய்து பூட்டவும்.
+locked-default: <green>பெட்டி உங்கள் குறியீட்டால் பூட்டப்பட்டது.
+break-denied: <red>இந்தப் பெட்டியை உரிமையாளர் மட்டுமே உடைக்க முடியும்.
+place-denied: <red>இந்தப் பெட்டியை வேறொருவரின் பூட்டிய பெட்டியுடன் இணைக்க முடியாது.
